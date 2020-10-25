@@ -1,0 +1,61 @@
+body{
+  background-color: #000;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+}
+
+input{
+  background: #232129;
+  border-radius: 10px;
+  border: 2px solid #232129;
+  padding: 16px;
+  width: 100%;
+  color: #f4ede8;
+}
+
+input + input {
+  margin-top: 8px;
+}
+
+button {
+  background: #ff9000;
+  border-radius: 10px;
+  border: none;
+  padding: 0 16px;
+  width: 100%;
+  height: 56px;
+  color: #312e38;
+  font-weight: bold;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #ff9045;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.phone-book-list-header {
+  padding: 20px 0;
+  background-color: #eee;
+  border-radius: 0 0 10px 10px;
+}
+
+.phone-book-list-title{
+  text-align: center;
+  font-size: 30px;
+  color: #555;
+}

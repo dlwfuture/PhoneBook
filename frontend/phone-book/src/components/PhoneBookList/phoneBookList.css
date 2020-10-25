@@ -1,0 +1,20 @@
+.phone-book-list{
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+.phone-book-add-holder {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    right: 0;
+    margin: 0 2% 2% 0;
+    color: #900;
+}
+
+.phone-book-add-holder:hover {
+    color: #999;
+}
