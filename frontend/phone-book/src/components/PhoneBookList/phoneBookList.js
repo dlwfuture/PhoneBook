@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import './phoneBookList.css'
 import { FaPlusCircle } from 'react-icons/fa'
 import PhoneBookListItem from '../PhoneBookListItem/phoneBookListItem'
-import { getContacts } from '../../actions/contacts'
+import { GetContacts } from '../../actions/contacts'
 
 class PhoneBookList extends Component {
     componentDidMount() {
@@ -34,7 +34,7 @@ class PhoneBookList extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        GetContacts: () => dispatch(getContacts()),
+        GetContacts: () => dispatch(GetContacts()),
     }
 }
 

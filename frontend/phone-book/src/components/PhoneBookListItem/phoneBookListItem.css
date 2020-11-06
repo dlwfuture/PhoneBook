@@ -8,6 +8,11 @@
     border-radius: 5px; /* 5px rounded corners */
 }
 
+.phone-book-card {
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+
 .phone-book-item:hover{
     transition-delay: 0.1s;
     -webkit-box-shadow: 1px 3px 20px -7px rgba(150,0,0,1);
@@ -27,8 +32,8 @@
     border-radius: 50%;
     border: 1px solid #ccc;
     padding: 20px;
-    margin-top: -20px;
-    margin-left: 20px;
+    margin-top: 0;
+    margin-left: 0;
     background-color: #ccc;
     color: #990000;;
 }

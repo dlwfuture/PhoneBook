@@ -13,7 +13,12 @@ const headers = {
 /*
     GET
 */
-export const getAllContacts = ()=> {
+export const getAllContacts = () => {
     return fetch(`${API_URL}/contacts`, { method: 'GET', headers })
+    .then(res => res.json())
+}
+
+export const getContact = (contactId) => {
+    return fetch(`${API_URL}/contact/${contactId}`, { method: 'GET', headers })
     .then(res => res.json())
 }

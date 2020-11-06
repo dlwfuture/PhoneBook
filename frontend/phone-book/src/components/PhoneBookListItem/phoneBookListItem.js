@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import './phoneBookListItem.css'
 import { getInitials } from '../../utils/helpers'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
 class PhoneBookListItem extends Component {
     state = {
@@ -17,20 +21,32 @@ class PhoneBookListItem extends Component {
         }
     }
 
+    goToContact(contactId, event) {
+        event.stopPropagation()
+        this.props.history.push(`/contact/${contactId}`)
+    }
+
     render() {
-        return (
-            <div className="phone-book-item clickable" href="~">
-                <div className="phone-book-badge">
-                    {
-                        this.state.contact && 
-                        this.state.contact.Name && 
-                        getInitials(this.state.contact.Name)}
-                </div>
-                <p>{this.state.contact && this.state.contact.Name}</p>
-                <p className='phone-book-item-phone'>{this.state.contact && this.state.contact.Phone}</p>
-            </div>
+        const { contact } = this.state
+        return contact && (
+            <Card className="phone-book-card">
+                <CardContent onClick={(event) => this.goToContact(contact.Id, event)}>
+                    <div className="phone-book-badge">
+                        {
+                            contact.Name && 
+                            getInitials(contact.Name)
+                        }
+                    </div>
+                    <Typography>
+                        {contact.Name}
+                    </Typography>
+                    <Typography>
+                        {contact.Phone}
+                    </Typography>
+                </CardContent>
+            </Card>
         )
     }
 }
 
-export default PhoneBookListItem
+export default withRouter(PhoneBookListItem)

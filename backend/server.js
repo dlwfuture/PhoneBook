@@ -36,6 +36,19 @@ app.get('/contacts', (req, res) => {
       )
 })
 
+app.get('/contact/:contactId', (req, res) => {
+    contacts.get(req.token, req.params.contactId)
+      .then(
+          (data) => res.send(data),
+          (error) => {
+              console.error(error)
+              res.status(500).send({
+                 error: 'There was an error.'
+          })
+        }
+      )
+})
+
 app.listen(config.port, () => {
     console.log('Server listening on port %s, Ctrl+C to stop', config.port)
 })

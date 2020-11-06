@@ -24,6 +24,17 @@ function getAll (token) {
     })
 }
 
+function get(token, contactId) {
+    return new Promise((res) => {
+        const contacts = getData(token)
+        let keys = Object.keys(contacts)
+        let filtered_keys = keys.filter(key => !contacts[key].Deleted)
+        res(filtered_keys.map(key => contacts[key])
+        .filter(l => l.Id == contactId)[0])
+    })
+}
+
 module.exports = {
-    getAll
-  }
+    getAll,
+    get
+}
